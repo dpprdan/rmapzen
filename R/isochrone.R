@@ -105,10 +105,13 @@ iso_process <- function(response) {
 }
 
 #' @import assertthat
-isochrone_get <- function(url) {
+.isochrone_get <- function(url) {
     response <- matrix_GET(httr::build_url(url))
     iso_process(response)
 }
+
+#' @importFrom memoise memoise
+isochrone_get <- memoise::memoise(.isochrone_get)
 
 #' Retrieve isochrones
 #'

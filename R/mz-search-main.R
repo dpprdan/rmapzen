@@ -21,10 +21,13 @@ search_url <- function(endpoint, ..., api_key = mz_key()) {
 search_GET <- httr::GET
 
 #' @import assertthat
-search_get <- function(url) {
+.search_get <- function(url) {
     response <- search_GET(httr::build_url(url))
     search_process(response)
 }
+
+#' @importFrom memoise memoise
+search_get <- memoise::memoise(.search_get)
 
 search_process <- function(response) {
     httr::stop_for_status(response)

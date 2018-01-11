@@ -1,7 +1,10 @@
-vector_get <- function(url) {
+.vector_get <- function(url) {
     response <- vector_GET(httr::build_url(url))
     vector_process(response)
 }
+
+#' @importFrom memoise memoise
+vector_get <- memoise::memoise(.vector_get)
 
 vector_process <- function(response) {
     httr::stop_for_status(response)
