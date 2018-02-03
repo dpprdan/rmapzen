@@ -11,22 +11,24 @@ License: MIT + file LICENSE
 LazyData: TRUE
 Depends: R (>= 2.10)
 Imports:
-    tibble,
+    assertthat,
+    digest,
+    dplyr,
+    geojsonio,
     httr,
     jsonlite,
     maps,
-    dplyr,
-    assertthat,
-    geojsonio,
-    tidyr,
-    purrr,
-    sp,
-    rgdal,
-    digest,
     maptools,
-    sf
+    purrr,
+    ratelimitr,
+    rgdal,
+    sf,
+    sp,
+    tibble,
+    tidyr
 RoxygenNote: 6.0.1
-Suggests: testthat,
-    covr
+Suggests: 
+    covr,
+    testthat
 URL: https://tarakc02.github.io/rmapzen/
 BugReports: https://github.com/tarakc02/rmapzen/issues
