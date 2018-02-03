@@ -20,7 +20,7 @@ Normalize Address with Mapzen Libpostal API
 }
 \examples{
 \dontrun{
-mz_normalize_addr("Quatre-vingt-douze Ave des Champs-Elysees")
+mz_normalize_addr("Quatre-vingt-douze Ave des Champs-\\u00c9lys\\u00e9es")
 }
 
 }
